@@ -1,8 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/contacto',(req,res)=>{
-    res.send('CONTACTO');
+const conexion = require('./database/db');
+
+//Mostrar los registros
+router.get('/',(req,res)=>{
+    
+    conexion.query('SELECT * FROM users',(error,results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('index',{results:results})
+        }
+    })
 })
+
+//Ruta registros    
+router.get('/create',(req, res) =>{
+    res.render('create');
+})
+
+const crud = require('./controllers/crud');
+router.post('/save',crud.save)
 
 module.exports = router;

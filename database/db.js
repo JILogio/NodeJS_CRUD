@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const mysql = require('mysql');
 
 const conexion = mysql.createConnection({
@@ -5,4 +6,14 @@ const conexion = mysql.createConnection({
     user: 'root',
     password: 'Keyshar-799',
     database: 'crud_nodejs'
+});
+
+conexion.connect((error)=>{
+    if(error){
+        console.error('El error de conexion es: '+error);
+        return
+    }
+    console.log('¡Conectado a la BD de MySQL!');
 })
+
+module.exports = conexion;
