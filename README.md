@@ -1,12 +1,15 @@
-# **NodeJS_CRUD**
-## _Operaciones CRUD y modelo MVC con nodeJS y express_
+# **NodeJS_CRUD y MVC**
+## Modelo MVC con nodeJS y express_
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Las operaciones CRUD son acciones que corresponden a:crear, leer, editar y eliminar de una base de datos, con el objetivo de organizar y gestionar los datos para el desarrollo web. Es crucial para proyectos tanto back-end como front-end, ya que se comunican mediante llamados de API REST y poder realizar las tareas díarias.
+MVC es una propuesta de arquitectura del software utilizada para separar el código por sus distintas responsabilidades en tres capas diferentes, acotadas por su responsabilidad, en lo que se llaman Modelos, Vistas y Controladores
 
+## ¿Por qué?
+> Crear aplicaciones con mayor calidad.
+>
 > Facilita el control de requisitos de acceso
 > 
 > Simplifica el diseño
@@ -15,7 +18,12 @@ Las operaciones CRUD son acciones que corresponden a:crear, leer, editar y elimi
 > 
 > Mejor rendimiento
 > 
-> Fácil diseño que utilizar sentencias SQL
+> Software más robusto
+
+## Partes
+- Modelo: la capa donde se trabaja con los datos, por tanto contendrá mecanismos para acceder a la información y también para actualizar su estado.
+- Vista: visualización de las interfaces de usuario, o sea, el código que nos permitirá renderizar los estados de nuestra aplicación en HTML.
+- Controlador: acciones que se solicitan en la aplicación, como visualizar un elemento, realizar una compra, una búsqueda de información, etc.
 
 ## Herramientas
 - NodeJS: entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del
@@ -35,3 +43,4 @@ diseño
 
 **Referencias**
 - https://riuma.uma.es/xmlui/bitstream/handle/10630/11484/Carreño%20Villalba_TFG.pdf?sequence=1
+- https://desarrolloweb.com/articulos/que-es-mvc.html
