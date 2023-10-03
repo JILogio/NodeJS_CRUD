@@ -8,9 +8,13 @@
 Las operaciones CRUD son acciones que corresponden a:crear, leer, editar y eliminar de una base de datos, con el objetivo de organizar y gestionar los datos para el desarrollo web. Es crucial para proyectos tanto back-end como front-end, ya que se comunican mediante llamados de API REST y poder realizar las tareas díarias.
 
 > Facilita el control de requisitos de acceso
+> 
 > Simplifica el diseño
+> 
 > Tiene más escabilidad
+> 
 > Mejor rendimiento
+> 
 > Fácil diseño que utilizar sentencias SQL
 
 ## Herramientas
