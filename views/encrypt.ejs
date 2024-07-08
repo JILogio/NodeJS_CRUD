@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encriptar y Desencriptar Texto</title>
+</head>
+<body>
+  <h1>Encriptar y Desencriptar Texto</h1>
+  
+  <h2>Encriptar Texto</h2>
+  <form action="/encrypt" method="post">
+    <label for="text">Texto:</label>
+    <input type="text" id="text" name="text" required>
+    <button type="submit">Encriptar</button>
+  </form>
+  <% if (ciphertext) { %>
+    <h3>Texto Encriptado:</h3>
+    <p><%= ciphertext %></p>
+  <% } %>
+  
+  <h2>Desencriptar Texto</h2>
+  <form action="/decrypt" method="post">
+    <label for="ciphertext">Texto Encriptado:</label>
+    <input type="text" id="ciphertext" name="ciphertext" required>
+    <button type="submit">Desencriptar</button>
+  </form>
+  <% if (plaintext) { %>
+    <h3>Texto Desencriptado:</h3>
+    <p><%= plaintext %></p>
+  <% } %>
+</body>
+</html>

@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios')
 const router = express.Router();
 
 const conexion = require('./database/db');
@@ -48,5 +49,32 @@ router.get('/delete/:id',(req,res)=>{
 const crud = require('./controllers/crud');
 router.post('/save',crud.save);
 router.post('/update',crud.update);
+
+//Rutas de decriptación y encriptacion
+router.get('/encrypt', (req, res) => {
+  res.render('encrypt', { ciphertext: null,plaintext: null });
+});
+  
+  router.post('/encrypt', async (req, res) => {
+    const { text } = req.body;
+    try {
+      const response = await axios.post('http://localhost:3900/api/encrypt', { text });
+      res.render('encrypt', { ciphertext: response.data.ciphertext.data, plaintext: null });
+    } catch (error) {
+      console.error('Error encriptando texto:', error.message);
+      res.status(500).send(error.message);
+    }
+  });
+  
+  router.post('/decrypt', async (req, res) => {
+    const { ciphertext } = req.body;
+    try {
+      const response = await axios.post('http://localhost:3900/api/decrypt', { ciphertext } );
+      res.render('encrypt', { ciphertext: null, plaintext: response.data.plaintext });
+    } catch (error) {
+      console.error('Error desencriptando texto:', error.message);
+      res.status(500).send(error.message);
+    }
+  });
 
 module.exports = router;
